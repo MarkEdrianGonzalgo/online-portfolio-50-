@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finals Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <style>
+        .hero {
+            color: white;
+            text-shadow: 3px 3px gray;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: x-large;
+            background-image: url('header.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: left;
+            padding: 50px;
+            min-height: 4cm;
+        }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: darkslategray;
+            overflow: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidenav a:hover {
+            color: cyan;
+            transition: transform 0.5s ease;
+            transform: scale(1.1);
+        }
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        @media screen and (max-height: 450px)
+        {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+        
+        .button-container {
+            display: inline-block;
+            margin: auto;
+            text-align: center;
+            display: flex;
+            display: grid;
+        }
+
+        button {
+            border: 5px outset;
+            border-radius: 200px;
+            padding: 18px;
+            width: 30%;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease-in-out;
+            font-size: 100%;
+            margin: auto;
+            opacity: 0.9;
+        }
+
+        .b1 {
+            border-color: darkcyan;
+            background: linear-gradient(lightblue, cyan);
+        }
+        .b1:hover {
+            font-weight: bold;
+            transition: transform 0.5s ease;
+            transform: scale(1.1);
+        }
+        .b2 {
+            border-color: darkcyan;
+            background: linear-gradient(cyan, lightblue);
+        }
+        .b2:hover {
+            font-weight: bold;
+            transition: transform 0.5s ease;
+            transform: scale(1.1);
+        }
+        .b3 {
+            border-color: darkcyan;
+            background: linear-gradient(lightblue, cyan);
+        }
+        .b3:hover {
+            font-weight: bold;
+            transition: transform 0.5s ease;
+            transform: scale(1.1);
+        }
+        .b4 {
+            border-color: darkcyan;
+            background: linear-gradient(cyan, lightblue);
+        }
+        .b4:hover {
+            font-weight: bold;
+            transition: transform 0.5s ease;
+            transform: scale(1.1);
+        }
+        .b5 {
+            border-color: darkcyan;
+            background: linear-gradient(lightblue, cyan);
+        }
+        .b5:hover {
+            font-weight: bold;
+            transition: transform 0.5s ease;
+            transform: scale(1.1);
+        }
+        .b6 {
+            border-color: darkcyan;
+            background: linear-gradient(cyan, skyblue);
+        }
+        .b6:hover {
+            font-weight: bold;
+            transition: transform 0.5s ease;
+            transform: scale(1.1);
+        }
+
+        h1 {
+            color: cyan;
+            font-size: 60px;
+            text-shadow: 8px 8px darkcyan;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            width: 100%;
+        }
+        h3 {
+            color: cyan;
+            text-shadow: 4px 4px darkcyan;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 60px;
+            text-align: center;
+        }
+        h4 {
+            color: lightcyan;
+            text-shadow: 4px 4px darkcyan;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen;
+            font-size: 40px;
+            text-align: center;
+        }
+        h5 {
+            color: white;
+            text-align: center;
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p {
+            font-style: italic;
+            color: aliceblue;
+            text-shadow: 2px 2px black;
+            font-size: 25px;
+            text-align: center;
+        }
+        .about {
+            font-size: x-large;
+            background-image: url('images.jpeg');
+            background-attachment: unset;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 2em 4em;
+            min-height: 5cm;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .works {
+            font-size: x-large;
+            background-image: url('body.jpeg');
+            background-attachment: unset;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 2em 4em;
+            min-height: 5cm;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .contact {
+            font-size: x-large;
+            background-image: url('images.jpeg');
+            background-attachment: unset;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 2em 4em;
+            min-height: 5cm;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+        .box {
+            background-color: aliceblue;
+            box-shadow: 0 0 20px 0 #999;
+            top: 50%;
+            left: 50%;
+            width: 500%;
+            transform: translate(-50%,-50%);
+            position: absolute;
+        }
+        form {
+            margin: 50px;
+            text-align: center;
+        }
+        .input-field {
+            border: 1px solid darkcyan;
+            border-radius: 15px;
+            width: 50%;
+            height: 50px;
+            margin-top: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            outline: none;
+        }
+        .textarea-field {
+            width: 50%;
+            height: 100px;
+            padding-top: 10px;
+
+        }
+        .btn {
+            font-size: 20px;
+            background-color: aquamarine;
+            padding: 15px;
+            margin-top: 20px;
+            color: darkslategrey;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            width: 49%;
+            height: 50px;
+        }
+        .btn:hover {
+            font-weight: bold;
+            transition: transform 0.5s ease;
+            transform: scale(1.1);
+            color: white;
+            background-color: darkcyan;
+        }
+
+        .fbbtn {
+            background-color: #4267B2;
+            color: white;
+            padding: 10px 20px;
+            font-size: xx-large;
+            text-decoration: none;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .fbbtn:hover {
+            background-color: darkblue;
+            transition: transform 0.7s ease;
+            transform: scale(1.1);
+            font-weight: bold;
+            color: lightblue;
+            box-shadow: 0 0 20px skyblue;
+        }
+        .igbtn {
+            background-color: #cd486b;
+            color: white;
+            padding: 10px 20px;
+            font-size: xx-large;
+            text-decoration: none;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .igbtn:hover {
+            background-color: red;
+            transition: transform 0.7s ease;
+            transform: scale(1.1);
+            font-weight: bold;
+            color: lightpink;
+            box-shadow: 0 0 20px pink;
+        }
+        .gmbtn {
+            background-color: #2E8B57;
+            color: white;
+            padding: 10px 20px;
+            font-size: xx-large;
+            text-decoration: none;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .gmbtn:hover {
+            background-color: green;
+            transition: transform 0.7s ease;
+            transform: scale(1.1);
+            font-weight: bold;
+            color: lightgreen;
+            box-shadow: 0 0 20px yellowgreen;
+        }
+        .tgbtn {
+            background-color: #0088cc;
+            color: white;
+            padding: 10px 20px;
+            font-size: xx-large;
+            text-decoration: none;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .tgbtn:hover {
+            background-color: cornflowerblue;
+            transition: transform 0.7s ease;
+            transform: scale(1.1);
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 20px cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#a">HERO</a>
+            <a href="#b">ABOUT ME</a>
+            <a href="#c">WORKS</a>
+            <a href="#d">CONTACT ME</a>
+        </div>
+        <img src="logo.png" id="a"  style="display: block; margin-right: 50%; width: 10%; padding: 10px; border-radius: 20%; height: 5%; box-shadow: 0 0 10px #aaa">
+        <span style="font-size: 30px;cursor: pointer" onclick="openNav()">&#9776;START</span><br>
+        <h2>Hi guys, it's me...</h2>
+        <h1>MARK EDRIAN <br> GONZALGO </h1>
+        <h2>and this is my</h2>
+        <h1>ONLINE PORTFOLIO</h1>
+    </div>
+    <div class="about">
+        <h3 id="b">ABOUT ME</h3>
+        <img src="profile.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 35%; box-shadow: 0 0 10px #aaa">
+        <p>Hi, I'm Mark Edrian Gonzalgo and I am an BSIT student in Dalubhasaan ng Lungsod ng Lucena.
+            <br>I'm 21 years old and currently living in Brgy. Ibabang Iyam Lucena City.
+            <br>First of all I choose IT because I want to learn more about technology, 
+            <br>I want to explore and discover what really an Information Technology have.
+            <br>So far there are lot of learnings I already gain since I was in first year until now.
+            <br>Just like animation, programming, coding, creating databases and websites, etc,.
+            <br>So this ONLINE PORTFOLIO just serves as my folder of learnings.
+            <br>In this website you will see all the learnings I gained and different programs I made
+            <br>from my subject WS101 and some of this includes the HTML, CSS and JAVASCRIPT.
+            <br>Hope you like it!.
+            <br>
+            <br>If you want to know more ABOUT ME, just click this button for more informations.
+            <br>
+        </P>
+        <div class="button-container">
+            <button id="myb6" class="b6">OPEN RESUME</button>
+        </div>
+    </div>
+    <div class="works">
+        <h3 id="c">WORKS</h3>
+        <h4>RESPONSIVE LANDING PAGE</h4>
+        <img src="responsivepage.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%; box-shadow: 0 0 15px #aaa">
+        <br>
+        <div class="button-container">
+            <button id="myb1" class="b1">TRY IT!</button>
+        </div>
+        <br>
+        <br>
+        <h4>WORKING CALCULATOR</h4>
+        <img src="calculator.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 80%; box-shadow: 0 0 15px #aaa">
+        <br>
+        <div class="button-container">
+            <button id="myb2" class="b2">TRY IT!</button>
+        </div>
+        <br>
+        <br>
+        <h4>TO-DO LIST APPLICATION</h4>
+        <img src="todolistapp.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 80%; box-shadow: 0 0 15px #aaa">
+        <br>
+        <div class="button-container">
+            <button id="myb3" class="b3">TRY IT!</button>
+        </div>
+        <br>
+        <br>
+        <h4>ADD EVENT LISTENER</h4>
+        <img src="eventlistener.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 80%; box-shadow: 0 0 15px #aaa">
+        <br>
+        <div class="button-container">
+            <button id="myb4" class="b4">TRY IT!</button>
+        </div>
+        <br>
+        <br>
+        <h4>COLOR CHANGER</h4>
+        <img src="colorchanger.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 80%; box-shadow: 0 0 15px #aaa">
+        <br>
+        <div class="button-container">
+            <button id="myb5" class="b5">TRY IT!</button>
+        </div>
+    </div>
+    <div class="contact">
+        <h3 id="d">CONTACT ME</h3>
+        <div class="box"></div>
+        <form action="https://formspree.io/f/xleqbykz" method="post">
+            <input type="text" name="first" class="input-field" placeholder="First Name" autocomplete="off" required>
+            <input type="text" name="last" class="input-field" placeholder="Last Name" autocomplete="off" required>
+            <input type="email" name="email" class="input-field" placeholder="Email Address" autocomplete="off" required>
+            <textarea type="text" name="message" class="input-field textarea-field" placeholder="Enter Message" autocomplete="off" required></textarea>
+            <button type="submit" class="btn">SEND MESSAGE</button>
+        </form>
+        <a href=mailto:"megonz172@gmail.com" class="gmbtn">GM</a>
+        <a href="https://www.facebook.com/profile.php?id=100007302076286" class="fbbtn">FB</a>
+        <a href="https://instagram.com/megonzzz?igshid=MW5rc3BsM2Y2MjFmMA==" class="igbtn">IG</a>
+        <a href="https://t.me/kramnairde" class="tgbtn">TG</a>
+        <br>
+        <br>
+        <br>
+        <img src="logo.png" style="display: block; width: 8%; padding: 10px; border-radius: 10%; margin-left: auto; margin-right:auto;">
+        <h5>Copyright @ 2024<br>All Rights Reserved<br>Developed By: Mark Edrian A. Gonzalgo</h5>
+    </div>
+        <script>
+            document.getElementById("myb1").addEventListener("click", function1);
+            document.getElementById("myb2").addEventListener("click", function2);
+            document.getElementById("myb3").addEventListener("click", function3);
+            document.getElementById("myb4").addEventListener("click", function4);
+            document.getElementById("myb5").addEventListener("click", function5);
+            document.getElementById("myb6").addEventListener("click", function6);
+
+        function function1() {
+            window.location.href = 'https://markedriangonzalgo.github.io/responsive-landing-page/';
+        }
+        function function2() {
+            window.location.href = 'https://markedriangonzalgo.github.io/working-calculator/';
+        }
+        function function3() {
+            window.location.href = 'https://markedriangonzalgo.github.io/todo-list-app/';
+        }
+        function function4() {
+            window.location.href = 'https://markedriangonzalgo.github.io/HandsOn1-addEventListener-WS101/';
+        }
+        function function5() {
+            window.location.href = 'https://markedriangonzalgo.github.io/HandsOn2-colorChanger-WS101/';
+        }
+        function function6() {
+            window.location.href = 'https://markedriangonzalgo.github.io/online-resume/';
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        document.getElementById("b7").addEventListener("click", function7);
+        function function7() {
+            alert ("Message sent!")
+        }
+
+        
+        </script>
+</body>
+</html>
